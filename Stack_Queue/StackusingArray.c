@@ -67,3 +67,8 @@ int main() {
 
     return 0;
 }
+
+
+/* The top variable keeps track of the index of the top element in the stack.
+Push operation increments the top pointer and inserts the element.
+Pop operation returns the top element and decrements the top pointer.*/
