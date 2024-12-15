@@ -1,0 +1,68 @@
+### **Prefix Expression:**
+
+A **prefix expression**, also known as **Polish Notation**, is a way of writing arithmetic expressions in which the **operator** comes **before** its operands.
+
+#### General Structure of a Prefix Expression:
+- The general form of a prefix expression is:
+  ```
+  Operator Operand Operand
+  ```
+- The operator appears **before** the operands, unlike infix notation where the operator is between the operands.
+
+#### Key Characteristics of Prefix Expressions:
+1. **No Parentheses Required**: Prefix expressions do not require parentheses to indicate operation precedence. The order of operations is determined by the position of the operators and operands.
+2. **Operators Precede Operands**: In prefix notation, the operator comes first, followed by the operands. This means you apply the operator to the operands that come immediately after it.
+3. **Evaluated Right to Left**: Prefix expressions are evaluated from **right to left**. The first operator you encounter is the one that should be applied to the operands.
+
+### Example of Prefix Notation:
+Let’s consider the infix expression:
+```
+(A + B) * (C - D)
+```
+The **prefix expression** equivalent would be:
+```
+* + A B - C D
+```
+
+#### Explanation:
+1. The `+` operator comes before its operands `A` and `B`, forming `+ A B`.
+2. The `-` operator comes before its operands `C` and `D`, forming `- C D`.
+3. Finally, the `*` operator comes before the two results of the sub-expressions `+ A B` and `- C D`, forming `* + A B - C D`.
+
+### How Prefix Expressions Work:
+
+To evaluate a prefix expression, follow these steps:
+1. Start from the **rightmost** operator.
+2. Apply the operator to the two operands immediately following it.
+3. Replace the operator and operands with the result.
+4. Continue the process until only one result remains.
+
+### Example: Evaluating a Prefix Expression
+Consider the following prefix expression:
+```
+* + 2 3 4
+```
+
+1. **Step 1**: Start from the rightmost operator `*`.
+2. **Step 2**: The operands of `*` are the results of `+ 2 3` and `4`.
+   - Evaluate `+ 2 3`, which gives `5`.
+   - Now we have `* 5 4`.
+3. **Step 3**: Now, apply `*` to `5` and `4`, which gives `20`.
+
+Thus, the result of the expression `* + 2 3 4` is `20`.
+
+### Advantages of Prefix Notation:
+1. **No Need for Parentheses**: Prefix expressions eliminate the need for parentheses to manage operator precedence, which makes parsing easier.
+2. **Unambiguous**: Since the operator precedes its operands, the order of operations is always clear without ambiguity.
+
+### Prefix vs. Infix vs. Postfix:
+- **Infix**: Operators are placed **between** operands (e.g., `(A + B) * (C - D)`).
+- **Postfix**: Operators are placed **after** operands (e.g., `A B + C D - *`).
+- **Prefix**: Operators are placed **before** operands (e.g., `* + A B - C D`).
+
+### Converting Between Notations:
+- **Infix to Prefix**: To convert from infix to prefix, we first reverse the infix expression, convert it to postfix, and then reverse the postfix expression again.
+- **Postfix to Prefix**: Use a stack to convert from postfix to prefix by applying operators to operands as you encounter them.
+
+### Summary:
+A **prefix expression** places operators before operands, providing a way to represent mathematical expressions without parentheses and making operator precedence explicit through the position of the operators. This form is particularly useful for evaluating expressions in certain programming languages and calculators.
