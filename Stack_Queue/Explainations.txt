@@ -1,0 +1,25 @@
+A stack is a linear data structure that follows the Last In, First Out (LIFO) principle, meaning the element inserted last is the first one to be removed. Think of it like a stack of plates: the last plate placed on top is the first one you take out.
+
+Representation of Stacks Using Arrays
+In C, a stack can be implemented using an array where we maintain a top pointer that points to the current top of the stack.
+
+Queues in C
+A queue is a linear data structure that follows the First In, First Out (FIFO) principle, meaning the element inserted first is the first one to be removed. It is like a queue in a supermarket: the first person to enter the queue is the first one to be served.
+
+Representation of Queues Using Arrays
+In C, a queue can be represented using arrays. We maintain two pointers: front (points to the first element) and rear (points to the last element).
+
+ Circular Queues in C
+A circular queue solves the problem of wasting space in the traditional queue by reusing the empty spaces when elements are dequeued. It uses the concept of wrapping around.
+
+Priority Queues in C
+A priority queue is a special type of queue where each element is assigned a priority. Elements with higher priority are dequeued before elements with lower priority.
+
+C Program to Implement a Priority Queue:
+We can implement a priority queue using an array or a binary heap. 
+
+Deques (Double-Ended Queues) in C
+A deque allows elements to be added or removed from both ends (front and rear). It is useful when you need both queue and stack functionalities.
+
+
+
