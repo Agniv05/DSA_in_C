@@ -48,3 +48,6 @@ int main() {
 
     return 0;
 }
+/*We insert elements in the array in sorted order based on their priority.
+Insert ensures that higher-priority elements are at the front.
+RemoveHighestPriority removes and returns the highest-priority element, which is always at the front.*/
