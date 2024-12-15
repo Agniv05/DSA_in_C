@@ -71,3 +71,5 @@ int main() {
 
     return 0;
 }
+/* In circular queues, the front and rear pointers wrap around when they reach the end of the array.
+Enqueue and Dequeue operations are modified to use modulo arithmetic (% MAX) to handle the wrapping. */
