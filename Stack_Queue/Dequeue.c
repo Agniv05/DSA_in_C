@@ -67,3 +67,6 @@ int main() {
 
     return 0;
 }
+
+/* We maintain both the front and rear pointers.
+Elements can be added or removed from either end, making it a double-ended queue (Deque). */
