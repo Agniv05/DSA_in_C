@@ -140,3 +140,103 @@ int main() {
 
     return 0;
 }
+
+
+
+// Function to print the array
+void print_array(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+// Function to append an element to the array
+int append(int arr[], int size, int element, int capacity) {
+    if (size >= capacity) {
+        printf("Error: Array is full.\n");
+        return size; // No changes made
+    }
+    arr[size] = element; // Add element at the end
+    return size + 1;     // Increment size
+}
+
+// Function to pop the last element of the array
+int pop(int arr[], int size, int *popped_element) {
+    if (size == 0) {
+        printf("Error: Array is empty.\n");
+        return size; // No changes made
+    }
+    *popped_element = arr[size - 1]; // Store the last element
+    return size - 1;                 // Decrement size
+}
+
+// Function to pop an element at a specific index
+int pop_at_index(int arr[], int size, int index, int *popped_element) {
+    if (index < 0 || index >= size) {
+        printf("Error: Invalid index.\n");
+        return size; // No changes made
+    }
+    *popped_element = arr[index]; // Store the element at the given index
+    for (int i = index; i < size - 1; i++) {
+        arr[i] = arr[i + 1]; // Shift elements left
+    }
+    return size - 1; // Decrement size
+}
+
+// Function to alter an element at a specific index
+void alter_element(int arr[], int index, int new_value) {
+    arr[index] = new_value; // Change the value at the specified index
+}
+
+int main() {
+    // Initialize an array with a fixed capacity
+    int capacity = 10;               // Maximum capacity of the array
+    int arr[capacity] = {1, 2, 3};   // Initial elements
+    int size = 3;                    // Current size of the array
+
+    // Append an element
+    size = append(arr, size, 4, capacity);
+    printf("After push: ");
+    print_array(arr, size);          // Output: [1, 2, 3, 4]
+
+    // Pop the last element
+    int last_element;
+    size = pop(arr, size, &last_element);
+    printf("After pop: ");
+    print_array(arr, size);          // Output: [1, 2, 3]
+    printf("Popped element: %d\n", last_element); // Output: 4
+
+    // Pop an element at a specific index
+    int element_at_index_1;
+    size = pop_at_index(arr, size, 1, &element_at_index_1);
+    printf("After popping index 1: ");
+    print_array(arr, size);          // Output: [1, 3]
+    printf("Popped element at index 1: %d\n", element_at_index_1); // Output: 2
+
+    // Alter element at index 1
+    alter_element(arr, 1, 10);
+    printf("After alteration: ");
+    print_array(arr, size);          // Output: [1, 10]
+
+    // Second example with a new array
+    int arrt[capacity] = {1, 2, 3};
+    size = 3;
+
+    // Append an element
+    size = append(arrt, size, 4, capacity);
+    printf("After push: ");
+    print_array(arrt, size);         // Output: [1, 2, 3, 4]
+
+    // Pop the last element
+    size = pop(arrt, size, &last_element);
+    printf("After pop: ");
+    print_array(arrt, size);         // Output: [1, 2, 3]
+
+    // Alter element at index 1
+    alter_element(arrt, 1, 10);
+    printf("After alteration: ");
+    print_array(arrt, size);         // Output: [1, 10, 3]
+
+    return 0;
+}
