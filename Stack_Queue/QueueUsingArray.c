@@ -60,3 +60,7 @@ int main() {
 
     return 0;
 }
+/*front points to the first element in the queue.
+rear points to the last element in the queue.
+Enqueue operation inserts elements at the rear and increments the rear pointer.
+Dequeue operation removes the element at the front and increments the front pointer.*/
