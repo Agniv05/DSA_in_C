@@ -1,0 +1,88 @@
+### **Infix Expression:**
+
+An **infix expression** is the standard form of writing arithmetic expressions that you are most familiar with. In this notation, **operators** are placed **between** their **operands**. 
+
+#### General Structure of an Infix Expression:
+- The general form of an infix expression is:
+  ```
+  Operand Operator Operand
+  ```
+- For example, in the expression:
+  ```
+  A + B
+  ```
+  - `A` and `B` are the operands (the values or variables).
+  - `+` is the operator (indicating addition).
+
+### Key Characteristics of Infix Expressions:
+1. **Operators Between Operands**: The operator is placed between two operands. For example, `A + B` or `(A * B)`.
+2. **Parentheses for Precedence**: Parentheses are often used to indicate the order of operations and to override the usual precedence of operators.
+   - For example: `(A + B) * C` means that addition is performed first, followed by multiplication.
+3. **Operator Precedence**: The order of operations (precedence) must be followed. Common operator precedence is:
+   - `()` (Parentheses)
+   - `*`, `/` (Multiplication and Division)
+   - `+`, `-` (Addition and Subtraction)
+
+4. **Requires Parentheses for Clarity**: In infix expressions, parentheses are used to explicitly define the order of operations, especially when operators have different precedence. 
+
+### Example of Infix Expression:
+Consider the expression:
+```
+(A + B) * (C - D)
+```
+
+#### Explanation:
+- `A + B` is evaluated first because of the parentheses.
+- `C - D` is evaluated second because of the parentheses.
+- After evaluating the two sub-expressions, multiplication (`*`) is applied to the results of `(A + B)` and `(C - D)`.
+
+Infix is the standard way we write expressions in mathematics. It is intuitive but requires rules to handle operator precedence and parentheses.
+
+### How Infix Expressions are Evaluated:
+When evaluating infix expressions, the **order of operations** (precedence) and **parentheses** dictate how the operations are performed:
+1. **Parentheses first**: Any expression inside parentheses is evaluated first.
+2. **Operator precedence**: After parentheses, operations are carried out based on their precedence:
+   - First, multiplication (`*`) and division (`/`) are done before addition (`+`) and subtraction (`-`).
+3. **Left to right**: When operators have the same precedence, the expression is evaluated from left to right.
+
+### Example of Evaluating Infix Expression:
+For the infix expression:
+```
+(3 + 5) * 2
+```
+1. **Step 1**: Evaluate the expression inside the parentheses: `3 + 5 = 8`.
+2. **Step 2**: Multiply the result by 2: `8 * 2 = 16`.
+
+Thus, the result of the infix expression `(3 + 5) * 2` is `16`.
+
+### Operator Precedence in Infix:
+1. **Parentheses** `()`: Operations inside parentheses are evaluated first.
+2. **Multiplication** `*` and **Division** `/` come before **Addition** `+` and **Subtraction** `-`.
+3. **Addition** `+` and **Subtraction** `-` are evaluated last, but they are processed from left to right if they appear together.
+
+### Infix vs. Postfix vs. Prefix:
+- **Infix**: Operators are placed **between** operands. (e.g., `(A + B) * C`)
+- **Postfix**: Operators are placed **after** operands. (e.g., `A B + C *`)
+- **Prefix**: Operators are placed **before** operands. (e.g., `* + A B C`)
+
+### Converting Between Notations:
+- **Infix to Postfix/Prefix**: To convert from infix to postfix or prefix, you need to consider operator precedence and parentheses.
+- **Postfix/Prefix to Infix**: You can convert postfix or prefix to infix using stacks.
+
+### Example of Conversion:
+1. **Infix to Postfix**: Convert `(A + B) * C` to postfix:
+   - Infix: `(A + B) * C`
+   - Postfix: `A B + C *`
+
+2. **Infix to Prefix**: Convert `(A + B) * C` to prefix:
+   - Infix: `(A + B) * C`
+   - Prefix: `* + A B C`
+
+### Common Infix Expressions:
+1. **Simple Expression**: `A + B`
+2. **Expression with Parentheses**: `(A * B) + (C / D)`
+3. **Expression with Different Precedence**: `(A + B) * C - D`
+
+### Summary:
+An **infix expression** is the common mathematical notation where the **operator** is placed **between** the operands. It requires parentheses to control operator precedence, and it is the most natural and familiar form of writing expressions for humans. However, when computers evaluate infix expressions, they need to follow the rules of precedence or convert them into other forms like postfix or prefix notation for more efficient evaluation.
+
