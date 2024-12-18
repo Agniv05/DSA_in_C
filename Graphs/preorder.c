@@ -1,5 +1,5 @@
 #include <stack>
-
+// root  ---> left   ---->  right
 void preorderNonRecursive(struct TreeNode* root) {
     if (root == NULL) return;
     std::stack<struct TreeNode*> stack;
