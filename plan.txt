@@ -1,0 +1,42 @@
+Time and Space complexity ---->    Data Representation
+                                              |
+                                              |
+                                              |
+                                              |
+                                              |
+                                              V
+                                       Stack and Queue
+                            
+                                  Representation of Stacks
+                                  Representation of Queues
+                                      Circular Queues
+                                      Priority Queue
+                                          D-Queue
+    Conversion from Infix to Postfix and Prefix Expressions, Evaluation of Postfix Expression Using Stacks
+                                        Linked List
+
+                                              |
+                                              |
+                                              |
+                                              |
+                                              |
+                                              V
+                                            Trees:
+
+  Binary Tree, Traversal Methods: Preorder, In-Order, Post-Order Traversal (Recursive 
+  and Non-Recursive), Algorithms for Above Mentioned Traversal Methods. Representation of 
+  Trees and Its Applications. Binary Tree. Binary Search Tree, Height Balanced (AVL) Tree, 
+  B-Trees, B+ Tree, Min Heap, Max Heap Graphs: Graph Representation, Adjacency Matrix, 
+  Adjacency Lists, Traversal Schemes, Depth First Search, Breadth First Search.
+
+                                              |
+                                              |
+                                              |
+                                              |
+                                              |
+                                              V
+                            Searching, Sorting and Complexity: 
+                
+                  Searching: Sequential and Binary Searches, Indexed 
+                  Search, Hashing Schemes. 
+                  Sorting: Insertion, Selection, Bubble, Quick, Merge.
