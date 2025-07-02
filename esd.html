@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TrustFilter Alert</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #f2f4f8;
+      background: #eaf1f8;
       margin: 0;
       padding: 0;
       display: flex;
@@ -17,48 +17,94 @@
     }
 
     .popup {
-      background: white;
+      background: #fff;
       border-radius: 16px;
       padding: 30px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      width: 320px;
-      text-align: center;
+      width: 360px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
       animation: fadeIn 0.3s ease-in-out;
     }
 
     .popup h2 {
-      margin-bottom: 15px;
+      margin: 0 0 10px;
+      font-size: 22px;
       color: #333;
     }
 
     .popup p {
-      font-size: 16px;
+      margin: 10px 0;
       color: #555;
-      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .reputation {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .reputation.low {
+      background: #fddede;
+      color: #b71c1c;
+    }
+
+    .reputation.medium {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .reputation.high {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .message-preview {
+      background: #f4f6f8;
+      border-radius: 10px;
+      padding: 12px;
+      font-style: italic;
+      color: #333;
+      margin-top: 10px;
+      font-size: 14px;
     }
 
     .btn-group {
+      margin-top: 20px;
       display: flex;
       justify-content: space-between;
     }
 
     .btn {
-      padding: 12px 20px;
+      padding: 10px 18px;
+      font-size: 14px;
       border: none;
       border-radius: 10px;
-      font-weight: bold;
       cursor: pointer;
-      font-size: 14px;
+      font-weight: bold;
     }
 
     .btn-allow {
-      background: #4caf50;
+      background-color: #4caf50;
       color: white;
     }
 
     .btn-block {
-      background: #f44336;
+      background-color: #f44336;
       color: white;
+    }
+
+    .toggle-container {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #444;
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-container input {
+      margin-right: 10px;
     }
 
     @keyframes fadeIn {
@@ -69,27 +115,54 @@
 </head>
 <body>
 
-  <div class="popup" id="popup">
-    <h2>New Contact Request</h2>
-    <p>Allow messages and calls from <strong>+91 9876543210</strong>?</p>
-    <div class="btn-group">
-      <button class="btn btn-allow" onclick="handleResponse('allow')">Allow</button>
-      <button class="btn btn-block" onclick="handleResponse('block')">Block</button>
-    </div>
+<div class="popup" id="popup">
+  <h2>New Contact Request</h2>
+  <p><strong>Number:</strong> +91 9876543210</p>
+
+  <div class="reputation low" id="reputationScore">
+    Reputation Score: Low (25%)
   </div>
 
-  <script>
-    function handleResponse(action) {
-      if (action === 'allow') {
-        alert("Contact allowed ✅");
-      } else {
-        alert("Contact blocked ❌");
-      }
-      document.getElementById("popup").style.display = "none";
-      // Here, you can send the decision to the backend or AI model
+  <div class="message-preview">
+    “Hi there! You won a prize. Click this link to claim.”
+  </div>
+
+  <div class="toggle-container">
+    <input type="checkbox" id="permanentBlock"/>
+    <label for="permanentBlock">Permanently block this number</label>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-allow" onclick="handleResponse('allow')">Allow</button>
+    <button class="btn btn-block" onclick="handleResponse('block')">Block</button>
+  </div>
+</div>
+
+<script>
+  function handleResponse(action) {
+    const permanently = document.getElementById("permanentBlock").checked;
+    if (action === "allow") {
+      alert("✅ Contact allowed");
+    } else {
+      alert(permanently ? "⛔ Contact permanently blocked" : "🚫 Contact temporarily blocked");
     }
-  </script>
+
+    document.getElementById("popup").style.display = "none";
+
+    // Optional: Send data to backend/AI
+    const data = {
+      number: "+91 9876543210",
+      action: action,
+      permanent: permanently,
+      message: "Hi there! You won a prize. Click this link to claim.",
+      reputation: "Low",
+      reputationScore: 25
+    };
+
+    console.log("Decision submitted:", data);
+    // POST to API if needed
+  }
+</script>
 
 </body>
 </html>
-
